@@ -3,6 +3,17 @@ package project;
 import java.awt.*;
 import java.awt.event.*;
 
+/*
+ * 작성자: 최희정
+ * 작성일: 2023.09.24
+ * 프로젝트명: java 프로젝트 개별과제 - 항공기 예약 프로그램
+ * 사용자 : 이름, 성별, 항공사, 나라를 선택 후 예약 버튼을 누르면 밑의 tf에 작성이 됨
+ * 만약 취소 버튼을 누를 경우 다시 입력하라는 문구가 뜸
+ * tf는 따로 입력할 수 없게 설정해 둠
+ * 제 노트북에서만 그런지 모르겠는데 실행을 할 시 한글이 깨지는 현상이 발생합니다. 최대한 수정해보려고 노력 중이나 원인을 잘 모르겠습니다.
+ * (tf는 한글 깨짐 현상x)
+ * */
+
 //추상 클래스로 변경
 public abstract class Airplane extends Frame implements ActionListener {
 	//데이터 캡슐화를 위해 private으로 변경

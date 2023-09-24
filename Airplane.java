@@ -3,8 +3,10 @@ package project;
 import java.awt.*;
 import java.awt.event.*;
 
+//추상 클래스로 변경
 public abstract class Airplane extends Frame implements ActionListener {
-    private Label lb1, lb2;
+	//데이터 캡슐화를 위해 private으로 변경
+	private Label lb1, lb2;
     private TextField tf;
     private CheckboxGroup cg;
     private Checkbox cb1, cb2;
@@ -71,6 +73,7 @@ public abstract class Airplane extends Frame implements ActionListener {
         add("South", pn2);
     }
 
+    //추상 메서드 정의
     protected abstract void handleReservation();
 
     protected CheckboxGroup getCheckboxGroup() {
@@ -98,14 +101,17 @@ public abstract class Airplane extends Frame implements ActionListener {
         Object obj = e.getSource();
         if (obj instanceof Button) {
             Button clickedButton = (Button) obj;
+            // 예약 버튼 클릭 시 처리 메서드 호출
             if (clickedButton.getLabel().equals("예약")) {
                 handleReservation();
+               // 취소 버튼 클릭 시 메시지 출력
             } else if (clickedButton.getLabel().equals("취소")) {
                 ta.setText("다시 입력해주세요");
             }
         }
     }
-
+    
+    //사용자 정의 예외 클래스 정의
     protected static class ReservationException extends Exception {
         public ReservationException(String message) {
             super(message);
